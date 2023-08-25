@@ -4,7 +4,7 @@ const formRef = document.querySelector('.feedback-form');
 const obj = JSON.parse(localStorage.getItem(FORM_KEY)) ?? {};
 
 // setting the values of the form, in case they exist
-for (key in obj) {
+for (const key in obj) {
   formRef[key].value = obj[key];
 }
 
@@ -26,7 +26,7 @@ function onFormInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
 
-  for (key in obj) {
+  for (const key in obj) {
     console.log(`${key}: ${obj[key]}`);
   }
 
