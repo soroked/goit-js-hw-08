@@ -26,8 +26,11 @@ function onFormInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
 
+  console.log(obj);
+
+  // obj reset
   for (const key in obj) {
-    console.log(`${key}: ${obj[key]}`);
+    delete obj[key];
   }
 
   // LS reset
