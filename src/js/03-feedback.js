@@ -17,9 +17,15 @@ function onFormInput(e) {
 
   const formName = e.target;
 
-  obj[formName.name] = formName.value;
+  // in case th user tips smth and then delete, we delete the obj.property
+  if (formName.value.trim().length !== 0) {
+    obj[formName.name] = formName.value;
+  } else {
+    delete obj[formName.name];
+  }
 
   localStorage.setItem(FORM_KEY, JSON.stringify(obj));
+
 };
 
 // onSubmit
